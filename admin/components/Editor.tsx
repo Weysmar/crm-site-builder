@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import grapesjs from 'grapesjs';
 import 'grapesjs/dist/css/grapes.min.css';
 import 'grapesjs-preset-webpage';
+import 'grapesjs-blocks-basic';
 
 interface EditorProps {
     pageId?: string; // Optional: if provided, load existing page
@@ -28,8 +29,9 @@ export default function Editor({ pageId }: EditorProps) {
                 urlLoad: `http://localhost:3000/pages/${pageId || ''}/content`,
                 // Custom fetcher to handle params properly if needed, but standard remote works for simple JSON
             } as any,
-            plugins: ['gjs-preset-webpage'],
+            plugins: ['gjs-preset-webpage', 'gjs-blocks-basic'],
             pluginsOpts: {
+                'gjs-blocks-basic': {},
                 'gjs-preset-webpage': {
                     // Options for the preset
                 },

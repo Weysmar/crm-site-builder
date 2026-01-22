@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "grapesjs": "^0.22.14",
+    "grapesjs-blocks-basic": "^1.0.2",
     "grapesjs-preset-webpage": "^1.0.3",
     "next": "16.1.4",
     "react": "19.2.3",
