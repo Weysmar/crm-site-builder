@@ -5,7 +5,7 @@ import { UpdatePageDto } from './dto/update-page.dto';
 
 @Controller('pages')
 export class PagesController {
-  constructor(private readonly pagesService: PagesService) {}
+  constructor(private readonly pagesService: PagesService) { }
 
   @Post()
   create(@Body() createPageDto: CreatePageDto) {
@@ -19,16 +19,16 @@ export class PagesController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.pagesService.findOne(+id);
+    return this.pagesService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePageDto: UpdatePageDto) {
-    return this.pagesService.update(+id, updatePageDto);
+    return this.pagesService.update(id, updatePageDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.pagesService.remove(+id);
+    return this.pagesService.remove(id);
   }
 }
