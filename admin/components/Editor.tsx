@@ -35,7 +35,6 @@ export default function Editor({ pageId }: EditorProps) {
                 },
             },
             blockManager: {
-                appendTo: '#blocks',
                 blocks: [
                     {
                         id: 'hero-section',
