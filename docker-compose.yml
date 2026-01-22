@@ -36,6 +36,8 @@ services:
       DATABASE_URL: postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-crm_db}?schema=public
       REDIS_URL: redis://redis:6379
       PORT: 3000
+    # Auto-run migrations before starting the app
+    command: sh -c "npx prisma migrate deploy && npm run start:prod"
     depends_on:
       - postgres
       - redis
